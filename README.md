@@ -5,8 +5,9 @@ They've been tested to work on Unity 2019.1.0f2.
 Note that meshes generated with more than 65k vertices may cause issues when built for certain platforms.
 
 # How to use these
-* Copy these into `Assets/Editor`
-* Restart your Unity Editor
+* Copy these into `Assets/Editor`.
+* Restart your Unity Editor.
+* Create an asset from your Unity Editor by selecting a wizard under `Assets/Create` in the toolbar.
 
 # Generators Included
 * Octahedron Sphere
