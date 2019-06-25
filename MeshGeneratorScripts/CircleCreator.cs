@@ -43,12 +43,12 @@ public static class CircleCreator
         Vector2[] uvs = new Vector2[vertices.Length];
         for (int i = 0; i < segments; i++)
         {
-            float angle = 2 * ((float)i / segments);
+            float angle = (float)i / segments;
             uvs[i] = new Vector2(angle, 0f);
         }
         for (int i = 0; i <= segments; i++)
         {
-            float angle = 2 * ((float)i / (segments + 1));
+            float angle = (float)i / segments;
             uvs[i + segments] = new Vector2(angle, 1f);
         }
         #endregion
