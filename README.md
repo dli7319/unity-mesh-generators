@@ -17,6 +17,13 @@ Note that meshes generated with more than 65k vertices may cause issues when bui
 * Layered Sphere
   * A multi-layered version of the Octahedron Sphere for simulating volumes.
   * Allows you to select the number of layers and the radius.
+* Circle
+  * A simple 2D circle.
+  * Options: Segments and radius
+  * Has (2 * segments + 1) vertices and (segments) triangles.
+
+# Known bugs
+* Octohedron Sphere UV values are not in the range of [0, 1].
 
 # Credits
 * Octohedron Sphere is modified from a version written by Jasper Flick sourced from BinPress
