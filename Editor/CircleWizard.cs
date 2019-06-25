@@ -12,13 +12,14 @@ public class CircleWizard : ScriptableWizard
 
     public int segments = 32;
     public float radius = 0.5f;
+    public bool flip = false;
 
     private void OnWizardCreate()
     {
-        string path = EditorUtility.SaveFilePanelInProject("Save Circle", $"Circle_{segments}_{radius}", "asset", "Specify where to save the mesh.");
+        string path = EditorUtility.SaveFilePanelInProject("Save Circle", $"Circle_{segments}_{radius}{(flip ? "_flip" : "")}", "asset", "Specify where to save the mesh.");
         if (path.Length > 0)
         {
-            Mesh mesh = CircleCreator.Create(segments, radius);
+            Mesh mesh = CircleCreator.Create(segments, radius, flip);
             MeshUtility.Optimize(mesh);
             AssetDatabase.CreateAsset(mesh, path);
             Selection.activeObject = mesh;

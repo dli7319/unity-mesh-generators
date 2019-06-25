@@ -5,7 +5,7 @@ public static class CircleCreator
     public static readonly int minimumSegments = 3;
     public static readonly int maximumSegments = 4096;
 
-    public static Mesh Create(int segments, float radius)
+    public static Mesh Create(int segments, float radius, bool flip)
     {
         if (segments < minimumSegments)
         {
@@ -57,9 +57,18 @@ public static class CircleCreator
         int[] triangles = new int[3 * segments];
         for (int i = 0; i < segments; i++)
         {
-            triangles[3 * i] = i;
-            triangles[3 * i + 1] = i + segments;
-            triangles[3 * i + 2] = i + segments + 1;
+            if (flip)
+            {
+                triangles[3 * i] = i;
+                triangles[3 * i + 1] = i + segments + 1;
+                triangles[3 * i + 2] = i + segments;
+            }
+            else
+            {
+                triangles[3 * i] = i;
+                triangles[3 * i + 1] = i + segments;
+                triangles[3 * i + 2] = i + segments + 1;
+            }
         }
         #endregion
 
